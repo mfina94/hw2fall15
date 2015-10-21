@@ -25,37 +25,39 @@
 #instructions specified in the assignment description to hand-in your work.
 
 def palindrome?(str)
-  # YOUR CODE HERE
+  regex = /[a-zA-Z]/
+  newString = ''
+  
+  str.split("").each do |i|
+    if i =~ regex
+      newString.concat(i)
+    end
+  end
+  
+  newString = newString.downcase
+  
+  if newString == newString.reverse
+    return true
+  else
+    return false
+  end
 end
 
 def count_words(str)
-  # YOUR CODE HERE
+  splitDelim = /\s/
+  str.downcase
+  words = Array.new
+  words = str.split(splitDelim)
+  
+  hashWords = Hash.new
+  
+  words.each do |i|
+    if hashWords.has_key? i
+     hashWords[i] = hashWords.fetch(i)+1
+    else
+      hashWords.store(i,1)
+    end
+  end
+  
+  return hashWords
 end
-
-
-#the code below this line will test your functions. 
-#You should remove everything below this line prior to submitting your file
-
-
-test_str = "there goes the neighborhood"
-
-if palindrome? test_str
-  puts test_str + " is a palindrome!"
-else
-  puts test_str + " is NOT a palindrome!"
-end
-
-
-test_str = "Madam, I'm Adam"
-
-if palindrome? test_str
-  puts test_str + " is a palindrome!"
-else
-  puts test_str + " is NOT a palindrome!"
-end
-
-
-test_str = "The rent is due on the first day of the month unless the first day of the month falls on a Saturday or Sunday"
-
-word_count = count_words test_str
-puts word_count

@@ -9,6 +9,7 @@ end
 describe "#palindrome?" do
   it "should be defined" do
     lambda { palindrome?("Testing") }.should_not raise_error
+    lambda { palindrome?("asdf !! fdsa") }.should_not raise_error
   end
 end
 

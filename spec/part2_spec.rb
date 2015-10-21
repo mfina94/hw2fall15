@@ -20,6 +20,8 @@ end
 
 describe "#rps_tournament_winner" do
   it "should be defined" do
-    lambda { rps_tournament_winner([["X", "P"], ["Y", "S"]]) }.should_not raise_error
+    lambda { rps_tournament_winner([[[[["X", "P"], ["Y", "S"]],[["B", "R"], ["A", "S"]]],[[["C", "P"], ["D", "R"]],[["Z", "R"], ["W", "S"]]]],[[[["X", "R"], ["Y", "S"]],[["B", "R"], ["A", "S"]]],[[["C", "P"], ["D", "R"]],[["Z", "R"], ["W", "S"]]]]]) }.should_not raise_error
+    #lambda { rps_tournament_winner([[["X", "P"], ["Y", "S"]],[["B", "R"], ["A", "S"]]]) }.should_not raise_error
+  
   end
 end
